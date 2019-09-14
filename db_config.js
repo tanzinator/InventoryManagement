@@ -12,5 +12,5 @@ var qb = require('node-querybuilder').QueryBuilder(db_settings, 'mysql', 'single
 module.exports.qb = qb;
 
 /*Base Url*/
-var base_url = 'http://localhost:1000/';
+var base_url = 'http://localhost:8000/';
 module.exports.base_url = base_url;
