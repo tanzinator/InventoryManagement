@@ -12,5 +12,5 @@ var qb = require('node-querybuilder').QueryBuilder(db_settings, 'mysql', 'single
 module.exports.qb = qb;
 
 /*Base Url*/
-var base_url = 'mysql://b925987b32e5af:44f7fa8d@us-cdbr-iron-east-02.cleardb.net/heroku_6c45bd4f8ce0063?reconnect=true';
+var base_url = 'http://localhost:5000/';
 module.exports.base_url = base_url;
