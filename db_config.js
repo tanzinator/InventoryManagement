@@ -5,7 +5,7 @@ var db_settings = {
 	host: 'us-cdbr-iron-east-02.cleardb.net',
 	user: 'b925987b32e5af',
 	password: '44f7fa8d',
-	database: 'stock_db'
+	database: 'heroku_6c45bd4f8ce0063'
 };
 var qb = require('node-querybuilder').QueryBuilder(db_settings, 'mysql', 'single');
 
