@@ -1,0 +1,64 @@
+<!-- Header -->
+<% include template/view_header %>
+<!-- /Header -->
+
+<!-- Container Starts -->
+<div class="container">
+
+	<center>
+		<h1>Yorokobi Inventory Management</h1>
+	</center>
+	<!-- menu -->
+	<% include template/view_menu %>
+	<!-- /menu -->
+	<center>
+		<h4>Stock Report</h4>
+	</center>
+
+	<% if (product_info_list) { %>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>SL</th>
+				<th>Product Name</th>
+				<th>Product Details</th>
+				<th>Uni Price</th>
+				<th>Stock</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% 
+			var sl=1;
+			product_info_list.forEach(function(row){ %>
+			<tr>
+				<td><%= sl++ %></td>
+				<td><%= row.product_name %></td>
+				<td><%= row.product_details %></td>
+				<td><%= row.unit_price %></td>
+				<td><%= row.remain_stock %></td>
+				<td>
+					<a href="/edit/<%= row.product_id %>">
+						<i class="fa fa-edit" aria-hidden="true"></i>
+					</a>
+				</td>
+				<td>
+					<a href="/product_info/delete/<%= row.product_id %>"
+						onclick="return confirm('Are You Sure? In Out History will also be deleted')">
+						<i class="fa fa-remove" aria-hidden="true"></i>
+					</a>
+				</td>
+			</tr>
+			<% }); %>
+
+		</tbody>
+	</table>
+	<% } %>
+
+</div>
+<!-- Container Ends -->
+
+<!-- Footer -->
+<% include template/view_footer %>
+<!-- /Footer -->
