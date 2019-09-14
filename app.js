@@ -5,7 +5,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var validate = require('form-validate');
-var PORT = 1000;
+var PORT = 8081;
 
 /*Custom Module*/
 var home_controller = require('./controllers/home_controller');
