@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<% include ../views/template/stylesheetLinks %>
+
+<body class="hold-transition skin-blue sidebar-mini">
+	<div class="wrapper">
+
+		<% include ../views/template/view_header %>
+
+		<% include ../views/template/nav %>
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+			<section class="content-header">
+				<h1>
+					Outlet Info
+					<!--<small>Update the inventory.</small>-->
+				</h1>
+				<ol class="breadcrumb">
+					<li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+					<li class="active">Outlet Info</li>
+				</ol>
+			</section>
+
+			<% if (outlet_info_list) { %>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>SL</th>
+						<th>Name</th>
+						<th>GstIn</th>
+						<th>Shipping Address</th>
+						<th>Phone</th>
+						<th>Email</th>
+						<th>Billing Address</th>
+						<th>Creation Date</th>
+						<th>Edit</th>
+						<th>Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% 
+			var sl=1;
+			outlet_info_list.forEach(function(row){ %>
+					<tr>
+						<td><%= sl++ %></td>
+						<td><%= row.outlet_name %></td>
+						<td><%= row.outlet_gstin %></td>
+						<td><%= row.outlet_shippingaddress %></td>
+						<td><%= row.outlet_phone %></td>
+						<td><%= row.outlet_email%></td>
+						<td><%= row.outlet_billingaddress %></td>
+						<td><%= row.created_at %></td>
+						<td>
+							<a href="/outlet/edit/<%= row.outlet_id %>">
+								<i class="fa fa-edit" aria-hidden="true"></i>
+							</a>
+						</td>
+						<td>
+							<a href="/outlet/delete/<%= row.outlet_id %>"
+								onclick="return confirm('Are You Sure? In Out History will also be deleted')">
+								<i class="fa fa-remove" aria-hidden="true"></i>
+							</a>
+						</td>
+					</tr>
+					<% }); %>
+
+				</tbody>
+			</table>
+			<% } %>
+
+		</div>
+	</div>
+	<!-- Container Ends -->
+
+	required
+	<% include ../views/template/scripts %>
+
+
+
+</body>
+
+</html>

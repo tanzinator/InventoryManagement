@@ -1,19 +1,51 @@
-<!DOCTYPE html>
-<html>
+<header class="main-header">
+	<!-- Logo -->
+	<div class="logo">
+		<!-- mini logo for sidebar mini 50 x 50 pixels -->
+		<span class="logo-mini"><b>Y</b>KB</span>
+		<!-- logo for regular state and mobile devices -->
+		<span class="logo-lg"><b>Yoro</b>Kobi</span>
+	</div>
+	<!-- Header Navbar: style can be found in header.less -->
+	<nav class="navbar navbar-static-top">
+		<!-- Sidebar toggle button-->
+		<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+			<span class="sr-only">Toggle navigation</span>
+		</a>
 
-<head>
-	<title><%= title %></title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<div class="navbar-custom-menu">
+			<ul class="nav navbar-nav">
+				<!-- Messages: style can be found in dropdown.less-->
+				<!-- Notifications: style can be found in dropdown.less -->
+				<!-- Tasks: style can be found in dropdown.less -->
+				<!-- User Account: style can be found in dropdown.less -->
+				<li class="dropdown user user-menu">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<img src="dist/img/user.jpg" class="user-image" alt="User Image">
+						<span class="hidden-xs">Email</span>
+					</a>
+					<ul class="dropdown-menu">
+						<!-- User image -->
+						<li class="user-header">
+							<img src="dist/img/user.jpg" class="img-circle" alt="User Image">
 
-	<!-- Bootstarp CSS CDN -->
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-	<!--  Font Awsome CSS CDN-->
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-		type="text/css">
-	<!-- Select2 CSS CDN  -->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-
-</head>
-
-<body>
+							<p>
+								Email
+								<small>Member</small>
+							</p>
+						</li>
+						<!-- Menu Footer-->
+						<li class="user-footer">
+							<!--                 <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div> -->
+							<div class="pull-right">
+								<a href="/logout" class="btn btn-default btn-flat">Sign out</a>
+							</div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</header>

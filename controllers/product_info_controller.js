@@ -34,6 +34,7 @@ app.post('/insert_product_info', function (req, res) {
 		}
 		// insert products_info
 		db.qb.insert('products_info', insert_product_data, function (error, results) {
+			console.log(results)
 
 			db.qb.select_max('product_id').get('products_info', function (err, res) {
 
