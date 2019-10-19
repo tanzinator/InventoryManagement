@@ -23,7 +23,7 @@
     "express": "^4.15.3",
     "form-validate": "0.0.7",
     "git": "^0.1.5",
-    "mysql": "^2.13.0",
+    "mysql": "^2.14.0",
     "node-querybuilder": "^1.0.0",
     "simple-git": "^1.126.0"
   }
