@@ -28,7 +28,7 @@
     "form-validate": "0.0.7",
     "git": "^0.1.5",
     "morgan": "^1.9.1",
-    "mysql": "^2.13.0",
+    "mysql": "^2.14.0",
     "node-querybuilder": "^1.0.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
