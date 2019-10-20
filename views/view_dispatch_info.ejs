@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<% include ../views/template/stylesheetLinks %>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+        <% include ../views/template/view_header %>
+
+        <% include ../views/template/nav %>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Dispatch Info
+                    <!--<small>Update the inventory.</small>-->
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                    <li class="active">Dispatch Info</li>
+                </ol>
+            </section>
+
+            <% if (dispatch_info_list) { %>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>SL</th>
+                        <th>Name</th>
+                        <th>Quantity Dispatched</th>
+                        <th>From Outlet</th>
+                        <th>To Outlet</th>
+                        <th>Creation Date</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% 
+			var sl=1;
+			dispatch_info_list.forEach(function(row){ %>
+                    <tr>
+                        <td><%= sl++ %></td>
+                        <td><%= row.raw_material_name %></td>
+                        <td><%= row.raw_material_quantity_dispatched %></td>
+                        <td><%= row.outlet_from %></td>
+                        <td><%= row.outlet_to %></td>
+                        <td><%= row.created_at %></td>
+                        <td>
+                            <a href="/outlet/edit/<%= row.outlet_id %>">
+                                <i class="fa fa-edit" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/outlet/delete/<%= row.outlet_id %>"
+                                onclick="return confirm('Are You Sure? In Out History will also be deleted')">
+                                <i class="fa fa-remove" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <% }); %>
+
+                </tbody>
+            </table>
+            <% } %>
+
+        </div>
+    </div>
+    <!-- Container Ends -->
+
+    required
+    <% include ../views/template/scripts %>
+
+
+
+</body>
+
+</html>

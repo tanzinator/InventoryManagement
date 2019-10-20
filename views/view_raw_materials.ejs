@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<% include ../views/template/stylesheetLinks %>
+
+<body class="hold-transition skin-blue sidebar-mini">
+	<div class="wrapper">
+
+		<% include ../views/template/view_header %>
+
+		<% include ../views/template/nav %>
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+			<section class="content-header">
+				<h1>
+					Purchase Order
+					<!--<small>Update the inventory.</small>-->
+				</h1>
+				<ol class="breadcrumb">
+					<li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+					<li class="active"> Purchase Order</li>
+				</ol>
+			</section>
+
+
+			<% if (raw_material_info_list) { %>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>SL</th>
+						<th>Name</th>
+						<th>Primary Unit</th>
+						<th>Secondary Unit</th>
+						<th>Outlet Name</th>
+						<th>Supplier Name</th>
+						<th>Price</th>
+						<th>Quantity</th>
+						<th>Creation Date</th>
+						<th>Edit</th>
+						<th>Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% 
+			var sl=1;
+			raw_material_info_list.forEach(function(row){ %>
+					<tr>
+						<td><%= sl++ %></td>
+						<td><%= row.raw_material_name %></td>
+						<td><%= row.primary_unit %></td>
+						<td><%= row.secondary_unit %></td>
+						<td><%= row.outlet_name %></td>
+						<td><%= row.supplier_businessname %></td>
+						<td><%= row.raw_material_price %></td>
+						<td><%= row.raw_material_quantity %></td>
+						<td><%= row.created_at %></td>
+						<td>
+							<a href="/edit/<%= row.raw_material_id%>">
+								<i class="fa fa-edit" aria-hidden="true"></i>
+							</a>
+						</td>
+						<td>
+							<a href="/product_info/delete/<%= row.product_id %>"
+								onclick="return confirm('Are You Sure? In Out History will also be deleted')">
+								<i class="fa fa-remove" aria-hidden="true"></i>
+							</a>
+						</td>
+					</tr>
+					<% }); %>
+
+				</tbody>
+			</table>
+			<% } %>
+
+		</div>
+	</div>
+	<!-- Container Ends -->
+
+	required
+	<% include ../views/template/scripts %>
+
+
+
+</body>
+
+</html>

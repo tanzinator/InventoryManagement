@@ -2,6 +2,23 @@
 var mysql = require('mysql');
 
 var db_settings = {
+	host: 'localhost',
+	user: 'root',
+	password: '',
+	database: 'stock_db'
+};
+var qb = require('node-querybuilder').QueryBuilder(db_settings, 'mysql', 'single');
+
+module.exports.qb = qb;
+
+/*Base Url*/
+var base_url = 'http://localhost:5000/';
+module.exports.base_url = base_url;
+
+
+/*var mysql = require('mysql');
+
+var db_settings = {
 	host: 'us-cdbr-iron-east-02.cleardb.net',
 	user: 'b925987b32e5af',
 	password: '44f7fa8d',
@@ -9,8 +26,9 @@ var db_settings = {
 };
 var qb = require('node-querybuilder').QueryBuilder(db_settings, 'mysql', 'single');
 
-module.exports.qb = qb;
+module.exports.qb = qb;*/
 
 /*Base Url*/
-var base_url = 'https://yoroinventmanagement.herokuapp.com/';
-module.exports.base_url = base_url;
+/*var base_url = 'https://yoroinventmanagement.herokuapp.com/';
+module.exports.base_url = base_url;*/
+

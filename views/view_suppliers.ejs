@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<% include ../views/template/stylesheetLinks %>
+
+<body class="hold-transition skin-blue sidebar-mini">
+	<div class="wrapper">
+
+		<% include ../views/template/view_header %>
+
+		<% include ../views/template/nav %>
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+			<section class="content-header">
+				<h1>
+				 Supplier Info
+					<!--<small>Update the inventory.</small>-->
+				</h1>
+				<ol class="breadcrumb">
+					<li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+					<li class="active">Supplier Info</li>
+				</ol>
+			</section>
+
+			<!-- Main content -->
+			<% if (supplier_info_list) { %>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>SL</th>
+							<th>Business Name</th>
+							<th>Address</th>
+							<th>Phone</th>
+							<th>Email</th>
+							<th>Contact Name</th>
+							<th>Gstin</th>
+							<th>Creation Date</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% 
+						var sl=1;
+						supplier_info_list.forEach(function(row){ %>
+						<tr>
+							<td><%= sl++ %></td>
+							<td><%= row.supplier_businessname %></td>
+							<td><%= row.supplier_address %></td>
+							<td><%= row.supplier_phone %></td>
+							<td><%= row.supplier_address %></td>
+							<td><%= row.supplier_contactname%></td>
+							<td><%= row.supplier_gstin %></td>
+							<td><%= row.created_at %></td>
+							<td>
+								<a href="/edit/<%= row.supplier_id %>">
+									<i class="fa fa-edit" aria-hidden="true"></i>
+								</a>
+							</td>
+							<td>
+								<a href="/product_info/delete/<%= row.product_id %>"
+									onclick="return confirm('Are You Sure? In Out History will also be deleted')">
+									<i class="fa fa-remove" aria-hidden="true"></i>
+								</a>
+							</td>
+						</tr>
+						<% }); %>
+			
+					</tbody>
+				</table>
+				<% } %>
+			<!-- /.content -->
+		</div>
+
+	</div>
+	<!-- ./wrapper -->
+	required
+	<% include ../views/template/scripts %>
+
+
+
+</body>
+
+</html>

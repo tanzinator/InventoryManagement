@@ -34,6 +34,7 @@ app.post('/insert_product_info', function (req, res) {
 		}
 		// insert products_info
 		db.qb.insert('products_info', insert_product_data, function (error, results) {
+			console.log(results)
 
 			db.qb.select_max('product_id').get('products_info', function (err, res) {
 
@@ -53,7 +54,7 @@ app.post('/insert_product_info', function (req, res) {
 			});
 		});
 
-		res.redirect('/');
+		res.redirect('/home');
 
 	});
 	/*Form validation End*/
@@ -67,7 +68,7 @@ app.get('/delete/:product_id', function (request, response) {
 	db.qb.delete('products_info', { product_id: deleted_id }, function (error, results) { });
 	db.qb.delete('product_in_out_data', { product_id: deleted_id }, function (error, results) { });
 
-	response.redirect('/');
+	response.redirect('/home');
 
 });
 
@@ -145,7 +146,7 @@ app.post('/add_stock', function (request, response) {
 		db.qb.update('products_info', update_data, { product_id: product_id }, function (error, results) { });
 	});
 
-	response.redirect('/');
+	response.redirect('/home');
 
 });
 
