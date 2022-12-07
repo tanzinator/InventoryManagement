@@ -19,11 +19,11 @@
   "homepage": "https://github.com/hmmis/Stock-Management#readme",
   "dependencies": {
     "bcrypt": "^3.0.6",
-    "body-parser": "^1.17.2",
+    "body-parser": "^1.20.1",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.4",
     "ejs": "^2.5.6",
-    "express": "^4.15.3",
+    "express": "^4.18.2",
     "express-session": "^1.17.0",
     "form-validate": "0.0.7",
     "git": "^0.1.5",
